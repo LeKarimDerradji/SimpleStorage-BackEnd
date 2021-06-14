@@ -15,15 +15,15 @@ async function main() {
   console.log('Deploying contracts with the account:', deployer.address);
 
   // We get the contract to deploy
-  const Greeter = await hre.ethers.getContractFactory('Greeter');
-  const greeter = await Greeter.deploy('Hello, Hardhat!');
+  const SimpleStorage = await hre.ethers.getContractFactory('SimpleStorage');
+  const simplestorage = await SimpleStorage.deploy('Hello, Hardfork!');
 
   // Attendre que le contrat soit réellement déployé, cad que la transaction de déploiement
   // soit incluse dans un bloc
-  await greeter.deployed();
+  await simplestorage.deployed();
 
   // Afficher l'adresse de déploiement
-  console.log('Greeter deployed to:', greeter.address);
+  console.log('SimpleStorage deployed to:', simplestorage.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
